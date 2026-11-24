@@ -317,16 +317,37 @@
 }
 
 .fs-help {
-  width: 520px;
+  width: 380px;
   padding: 22px 24px 24px;
 }
 
-.fs-help__list {
-  margin: 18px 0 24px;
-  padding-left: 18px;
-  color: var(--fs-text);
+.fs-help__group {
+  margin: 18px 0 8px;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.fs-help__keys { margin: 0 0 22px; }
+
+.fs-help__keys div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  height: 34px;
+  border-bottom: 1px solid var(--fs-border);
   font-size: 12px;
-  line-height: 1.9;
+}
+
+.fs-help__keys dd { margin: 0; }
+
+.fs-help__keys kbd {
+  padding: 2px 7px;
+  border: 1px solid var(--fs-border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--fs-subtle);
+  font-family: inherit;
+  font-size: 11px;
 }
 
 /* ---------- Example data badge ---------- */

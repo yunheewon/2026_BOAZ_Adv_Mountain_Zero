@@ -11,11 +11,16 @@ import { useAppState } from '../state/AppState'
 import type { Workspace, WorkspaceStatus } from '../types'
 import './pages.css'
 
-const STATUS_LABEL: Record<WorkspaceStatus, string> = { done: '배치 완료', editing: '편집 중', ready: '준비 중' }
-const SUMMARY: Record<WorkspaceStatus, string> = {
-  done: '기준안 실행 완료 · 최적안 확인 가능',
-  editing: '레이아웃 배치 진행 중',
-  ready: '도면 확인 완료',
+// 상태 이름은 진행 단계(도면 → 배치 → 실행)를 그대로 나타낸다
+const STATUS_LABEL: Record<WorkspaceStatus, string> = { ready: '도면 확인', editing: '배치 중', done: '실행 완료' }
+
+/** 고정 문구 대신 작업장마다의 실제 내용을 요약 */
+function summary(ws: Workspace) {
+  if (ws.result) {
+    return `기준안 ${Math.round(ws.result.durationSec / 60)}분 실행 · 위험 이벤트 ${ws.result.metrics.riskEvents}건`
+  }
+  if (ws.status === 'ready') return `${ws.plan.fileName} · ${ws.plan.widthM} × ${ws.plan.heightM} m`
+  return ws.elements.length ? `요소 ${ws.elements.length}개 배치` : '빈 작업장'
 }
 
 type StatusFilter = 'all' | WorkspaceStatus
@@ -78,9 +83,9 @@ export function WorkspacesPage() {
             onSelect={setStatus}
             items={[
               { value: 'all', label: '전체 상태' },
-              { value: 'done', label: '배치 완료' },
-              { value: 'editing', label: '편집 중' },
-              { value: 'ready', label: '준비 중' },
+              { value: 'ready', label: STATUS_LABEL.ready },
+              { value: 'editing', label: STATUS_LABEL.editing },
+              { value: 'done', label: STATUS_LABEL.done },
             ]}
             trigger={({ toggle }) => (
               <button className="wslist__select" onClick={toggle}>
@@ -115,7 +120,7 @@ export function WorkspacesPage() {
               <li key={ws.id} className="wscard fs-card">
                 <div className="wscard__main">
                   <h2 className="wscard__name">{ws.name}</h2>
-                  <p className="wscard__summary">{SUMMARY[ws.status]}</p>
+                  <p className="wscard__summary">{summary(ws)}</p>
                 </div>
                 <p className="wscard__updated">마지막 수정 &nbsp;{ws.updatedLabel}</p>
                 <p className="wscard__status">{STATUS_LABEL[ws.status]}</p>

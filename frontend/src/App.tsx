@@ -28,14 +28,14 @@ function Screens() {
 
   if (segments[0] === 'w' && segments[1]) {
     const ws = getWorkspace(segments[1])
-    if (!ws) return <Missing message="작업장을 찾을 수 없습니다. 로그인하지 않았거나 이번 세션에서 만든 작업장이 아닐 수 있습니다." />
+    if (!ws) return <Missing message="작업장을 찾을 수 없습니다." />
     const stage = segments[2] ?? 'layout'
     if (stage === 'plan') return <PlanCheckPage key={ws.id} workspace={ws} />
     if (stage === 'layout') return <LayoutPage key={ws.id} workspace={ws} />
     if (!ws.result) {
       return (
         <Missing
-          message="아직 기준안 시뮬레이션을 실행하지 않았습니다. 배치 화면에서 시뮬레이션을 실행하세요."
+          message="아직 시뮬레이션을 실행하지 않았습니다."
           action={{ label: '배치로 이동', to: paths.layout(ws.id) }}
         />
       )

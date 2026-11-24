@@ -24,7 +24,7 @@ export function TemplatesPage() {
   return (
     <div className="page">
       <GlobalNav />
-      <PageHeader title="템플릿 선택" subtitle="템플릿으로 배치를 시작합니다. 선택한 뒤 자유롭게 수정할 수 있습니다." />
+      <PageHeader title="템플릿 선택" subtitle="자주 쓰는 작업장 구성으로 바로 시작합니다." />
       <ul className="templates">
         {TEMPLATES.map((t) => (
           <li key={t.id}>

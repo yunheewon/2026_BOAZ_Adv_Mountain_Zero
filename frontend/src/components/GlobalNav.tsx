@@ -12,6 +12,14 @@ import { Modal } from './Modal'
 import { Button } from './Button'
 import './components.css'
 
+const HELP_KEYS: [string, string][] = [
+  ['R', '90° 회전'],
+  ['Delete', '삭제'],
+  ['Ctrl + Z', '실행 취소'],
+  ['방향키', '0.1 m 이동 (Shift: 1 m)'],
+  ['Esc', '선택 해제'],
+]
+
 /** Figma "Component / Global Navigation" — 64px 공통 상단 메뉴 */
 export function GlobalNav({ active, flat = false }: { active?: 'home' | 'workspaces'; flat?: boolean }) {
   const { user, signOut } = useAppState()
@@ -72,13 +80,17 @@ export function GlobalNav({ active, flat = false }: { active?: 'home' | 'workspa
           <h2 id="help-title" className="fs-dialog-title">
             도움말
           </h2>
-          <ol className="fs-help__list">
-            <li>홈에서 도면을 올리거나, 템플릿·빈 작업장으로 시작합니다.</li>
-            <li>배치 화면에서 요소를 끌어 놓고, 선택해 크기·회전·속성을 바꿉니다. (R 회전 · Delete 삭제 · Ctrl+Z 실행 취소)</li>
-            <li>시뮬레이션 실행으로 기준안을 돌리고, 위험 이벤트를 눌러 해당 시간으로 이동합니다.</li>
-            <li>권장 조치의 ‘시험’은 기준안을 바꾸지 않고 플로팅 창에서 따로 실행합니다.</li>
-            <li>결과 분석과 최적 운영안에서 기준안과 비교합니다.</li>
-          </ol>
+          <p className="fs-help__group">배치 단축키</p>
+          <dl className="fs-help__keys">
+            {HELP_KEYS.map(([key, desc]) => (
+              <div key={key}>
+                <dt>
+                  <kbd>{key}</kbd>
+                </dt>
+                <dd>{desc}</dd>
+              </div>
+            ))}
+          </dl>
           <div className="fs-dialog-actions">
             <Button variant="primary" onClick={() => setHelpOpen(false)}>
               확인

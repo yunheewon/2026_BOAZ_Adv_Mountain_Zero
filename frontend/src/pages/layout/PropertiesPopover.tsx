@@ -32,7 +32,7 @@ export function PropertiesPopover({ el, side, onChange, onDelete, onClose }: Pro
         onChange={(e) => onChange({ label: e.target.value })}
         aria-label="이름"
       />
-      <p className="props__kind">{item.label}</p>
+      {!el.label.includes(item.label) && <p className="props__kind">{item.label}</p>}
       <div className="props__rows">
         {/* 위치는 요소 중심 기준. 입력한 중심값이 그대로 보이도록 좌상단은 반올림하지 않는다 */}
         <NumField label="위치 X" unit="m" value={el.x + el.w / 2} step={0.5} onCommit={(v) => onChange({ x: round2(v - el.w / 2) })} />

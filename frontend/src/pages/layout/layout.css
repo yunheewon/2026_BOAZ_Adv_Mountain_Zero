@@ -504,11 +504,14 @@
   font-size: 12px;
 }
 
+/* 숫자는 오른쪽 정렬해 단위(m, °)와 붙여 보이게 */
 .props__input {
-  width: 58px;
+  width: 52px;
   height: 26px;
   margin-left: -6px;
-  padding: 0 5px;
+  padding: 0 4px;
+  text-align: right;
+  -moz-appearance: textfield;
   border: 1px solid transparent;
   border-radius: 5px;
   background: none;
@@ -518,9 +521,26 @@
 .props__value .props__input + .props__input { margin-left: 0; }
 .props__input:hover { border-color: var(--fs-border); }
 .props__input:focus { outline: none; border-color: var(--fs-accent); background: var(--fs-white); }
-.props__select { width: 96px; }
+.props__select { width: 96px; text-align: left; }
+
+.props__input::-webkit-outer-spin-button,
+.props__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.props__title + .props__rows { margin-top: 6px; }
 .props__times { margin: 0 2px; color: var(--fs-muted); }
-.props__unit { color: var(--fs-text); }
+.props__times + .props__input { width: 36px; margin-left: 0; text-align: left; }
+
+@supports (field-sizing: content) {
+  .props__times + .props__input {
+    field-sizing: content;
+    width: auto;
+    min-width: 24px;
+  }
+}
+.props__unit { margin-left: 2px; color: var(--fs-text); }
 
 .props__actions {
   display: flex;

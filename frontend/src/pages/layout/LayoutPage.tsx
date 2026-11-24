@@ -230,7 +230,7 @@ export function LayoutPage({ workspace }: { workspace: Workspace }) {
               {empty
                 ? `빈 작업장  ·  작업장 크기 ${widthM} × ${heightM} m  ·  격자 간격 ${gridM} m`
                 : selected
-                  ? `${selected.label} 선택됨  ·  드래그 이동  ·  모서리 크기 조절  ·  위 손잡이 회전  ·  R 회전  ·  Delete 삭제`
+                  ? `${selected.label} 선택됨  ·  R 회전  ·  Delete 삭제`
                   : '배치 편집 중  ·  드래그 이동  ·  R 회전  ·  Delete 삭제'}
             </p>
           </div>
