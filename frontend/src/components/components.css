@@ -1,0 +1,367 @@
+/* ---------- Button (Figma Component / Button · Primary / Outline) ---------- */
+.fs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  filter: drop-shadow(var(--fs-shadow-button));
+  transition: background-color 0.12s, border-color 0.12s, opacity 0.12s;
+}
+
+.fs-btn--sm { height: 29px; padding: 0 14px; }
+.fs-btn--md { height: 34px; }
+.fs-btn--lg { height: 38px; padding: 0 24px; }
+
+.fs-btn--primary {
+  background: var(--fs-accent);
+  color: var(--fs-white);
+}
+
+.fs-btn--primary:hover:not(:disabled) { background: #0890e2; }
+
+.fs-btn--outline {
+  background: var(--fs-white);
+  border-color: var(--fs-outline-border);
+  color: var(--fs-text);
+}
+
+.fs-btn--outline:hover:not(:disabled) { border-color: var(--fs-accent); }
+.fs-btn--outline.is-on { background: var(--fs-accent-light); border-color: var(--fs-accent); color: var(--fs-stage-selected-text); }
+
+.fs-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---------- Global navigation (64px) ---------- */
+.fs-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding-left: 28px;
+  background: var(--fs-white);
+  box-shadow: var(--fs-shadow-topbar);
+}
+
+.fs-topbar--flat {
+  box-shadow: none;
+  border: 1px solid #d9e7f4;
+}
+
+.fs-topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 190px;
+  color: var(--fs-text);
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.fs-topbar__divider {
+  width: 1px;
+  height: 32px;
+  background: var(--fs-border);
+  flex: none;
+}
+
+.fs-topbar__nav {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  gap: 32px;
+}
+
+.fs-topbar__link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 44px;
+  padding: 0 17px;
+  border-radius: 10px;
+  color: var(--fs-text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.fs-topbar__link:hover { background: #f0f8fe; }
+
+.fs-topbar__link.is-active {
+  background: var(--fs-nav-selected-bg);
+  color: var(--fs-nav-selected-text);
+}
+
+.fs-topbar__right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.fs-topbar__util {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fs-topbar__divider--right {
+  margin: 0 9px 0 13px;
+}
+
+.fs-topbar__caret {
+  display: flex;
+  margin-left: 10px;
+}
+
+.fs-topbar__util {
+  height: 36px;
+  padding: 0 6px;
+  border-radius: 8px;
+}
+
+.fs-topbar__util:hover { background: #f0f8fe; }
+
+/* 드롭다운 화살표 (Figma chevron 아이콘) */
+.fs-caret {
+  flex: none;
+  opacity: 0.75;
+}
+
+/* ---------- Worksite stage navigation (60px) ---------- */
+.fs-stagebar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding-left: 28px;
+  background: var(--fs-stage-bg);
+  border: 1px solid var(--fs-stage-border);
+}
+
+.fs-stagebar--inset { padding-left: 10px; }
+
+.fs-stagebar__selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid #cbddf0;
+  border-radius: 8px;
+  background: var(--fs-white);
+  box-shadow: 0 2px 5px rgba(41, 82, 148, 0.06);
+  color: #17243c;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.fs-stagebar__selector span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fs-stagebar__divider {
+  width: 1px;
+  height: 28px;
+  margin-left: 24px;
+  background: #c5d6e9;
+}
+
+/* 단계 버튼은 같은 너비·같은 간격 (Figma는 간격이 39/31/11/25px로 들쭉날쭉) */
+.fs-stagebar__stages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 32px;
+}
+
+.fs-stagebar__stage {
+  height: 40px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: #1a2945;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.fs-stagebar__stage:hover:not(:disabled):not(.is-active) { background: #eef7fd; }
+.fs-stagebar__stage:disabled { color: #a3b0c0; cursor: not-allowed; }
+
+.fs-stagebar__stage { width: 124px; }
+
+.fs-stagebar__stage.is-active {
+  background: var(--fs-nav-selected-bg);
+  color: var(--fs-stage-selected-text);
+}
+
+/* ---------- Menu ---------- */
+.fs-menu { position: relative; }
+
+.fs-menu__panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  z-index: 60;
+  min-width: 100%;
+  padding: 6px;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(33, 62, 110, 0.12);
+}
+
+.fs-menu__panel--left { left: 0; }
+.fs-menu__panel--right { right: 0; min-width: 160px; }
+
+.fs-menu__item {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  text-align: left;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.fs-menu__item:hover:not(:disabled) { background: var(--fs-accent-light); }
+.fs-menu__item.is-selected { color: var(--fs-accent); font-weight: 500; }
+.fs-menu__item:disabled { color: #a3b0c0; cursor: not-allowed; }
+
+.fs-menu__footer {
+  margin-top: 4px;
+  padding: 8px 10px 4px;
+  border-top: 1px solid var(--fs-border);
+}
+
+.fs-menu__note { color: var(--fs-muted); font-size: 11px; }
+.fs-menu__link { color: var(--fs-accent); font-size: 12px; text-decoration: none; }
+
+/* ---------- Page header ---------- */
+.fs-pagehead {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  margin: 12px 28px 22px;
+}
+
+.fs-pagehead__title {
+  width: 167px;
+  font-size: 17px;
+  font-weight: 500;
+  flex: none;
+}
+
+.fs-pagehead__subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fs-muted);
+  font-size: 12px;
+  white-space: pre;
+}
+
+.fs-pagehead__actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+/* ---------- Modal ---------- */
+.fs-modal {
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding-bottom: 64px;
+  background: rgba(248, 250, 253, 0.72);
+}
+
+.fs-modal__dialog {
+  position: relative;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(33, 62, 110, 0.12);
+}
+
+.fs-dialog-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fs-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.fs-help {
+  width: 520px;
+  padding: 22px 24px 24px;
+}
+
+.fs-help__list {
+  margin: 18px 0 24px;
+  padding-left: 18px;
+  color: var(--fs-text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ---------- Example data badge ---------- */
+.fs-example-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border: 1px solid #f3d2a6;
+  border-radius: 10px;
+  background: #fff7ec;
+  color: #a2600f;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* ---------- Card ---------- */
+.fs-card {
+  position: relative;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+}
+
+.fs-card__title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fs-empty {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  padding: 80px 0;
+  color: var(--fs-muted);
+  font-size: 13px;
+  text-align: center;
+}

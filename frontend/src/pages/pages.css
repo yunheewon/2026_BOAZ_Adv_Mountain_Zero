@@ -1,0 +1,220 @@
+.page {
+  min-height: 100vh;
+  background: var(--fs-background);
+}
+
+/* ---------- 작업장 목록 (Figma 02 / 02b) ---------- */
+.wslist .fs-pagehead {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.wslist__new { width: 132px; }
+
+/* 비로그인: 목록은 배경 오버레이 아래에 흐리게 보이기만 한다 (Figma 02b) */
+.wslist.is-locked {
+  pointer-events: none;
+  user-select: none;
+}
+
+.wslist__toolbar {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  margin: 0 28px;
+}
+
+.wslist__search {
+  flex: 1;
+  height: 100%;
+  padding: 0 18px;
+  border: 0;
+  background: none;
+  font-size: 12px;
+}
+
+.wslist__search::placeholder { color: var(--fs-muted); }
+.wslist__search:focus { outline: none; }
+.wslist__toolbar:focus-within { border-color: #b9d6ee; }
+
+.wslist__filter { width: 204px; }
+.wslist__sort { width: 225px; }
+
+.wslist__select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  margin-left: -8px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  font-size: 12px;
+}
+
+.wslist__select:hover { background: var(--fs-subtle); }
+
+.wslist__cards {
+  display: grid;
+  gap: 18px;
+  margin: 21px 28px 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.wscard {
+  display: grid;
+  grid-template-columns: 1fr 274px 147px;
+  grid-template-rows: auto 1fr;
+  height: 132px;
+  padding: 18px 25px 21px 20px;
+}
+
+.wscard__name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.wscard__summary {
+  margin-top: 16px;
+  color: var(--fs-muted);
+  font-size: 12px;
+}
+
+.wscard__updated,
+.wscard__status {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.wscard__updated { color: var(--fs-muted); }
+
+.wscard__status {
+  color: var(--fs-accent);
+  font-weight: 500;
+}
+
+.wscard__open {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: end;
+  justify-self: end;
+  width: 130px;
+}
+
+.login-required {
+  width: 492px;
+  min-height: 289px;
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-required__title {
+  margin-bottom: 29px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.login-required__body {
+  margin-bottom: 14px;
+  color: #3a475a;
+  font-size: 12px;
+}
+
+.login-required__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.login-required__login {
+  width: 140px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* ---------- 로그인 (디자인 없음) ---------- */
+.login {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 64px);
+  padding-bottom: 64px;
+}
+
+.login__card {
+  display: grid;
+  gap: 16px;
+  width: 420px;
+  padding: 28px;
+  border-radius: 10px;
+}
+
+.login__title { font-size: 17px; font-weight: 500; }
+
+.login__lead,
+.login__note {
+  color: var(--fs-muted);
+  font-size: 12px;
+}
+
+.login__lead { margin-top: -6px; margin-bottom: 6px; }
+.login__note { text-align: center; }
+
+.login__field {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.login__field input {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.login__field input:focus {
+  outline: none;
+  border-color: var(--fs-accent);
+  box-shadow: 0 0 0 3px rgba(7, 156, 245, 0.12);
+}
+
+.login__submit { width: 100%; margin-top: 6px; }
+
+/* ---------- 템플릿 선택 (디자인 없음) ---------- */
+.templates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0 28px 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.template {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  padding: 16px 16px 18px;
+  text-align: left;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.template:hover {
+  border-color: var(--fs-accent);
+  box-shadow: var(--fs-shadow-card);
+}
+
+.mini-layout {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background: var(--fs-subtle);
+}
+
+.template__name { font-size: 15px; font-weight: 500; }
+.template__desc { color: var(--fs-muted); font-size: 12px; }
+.template__size { color: var(--fs-accent); font-size: 12px; }

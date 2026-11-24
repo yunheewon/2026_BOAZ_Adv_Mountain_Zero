@@ -1,0 +1,176 @@
+/* Figma "03a / 업로드 도면 확인" */
+.plan__start {
+  width: 166px;
+  height: 36px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.plan {
+  display: grid;
+  grid-template-columns: 274px 1fr;
+  gap: 15px;
+  height: max(600px, calc(100vh - 210px));
+  margin: 0 24px 24px;
+}
+
+.plan__props { padding: 15px 16px; }
+
+.plan__rows { margin: 18px 0 0; }
+
+.plan__row {
+  display: grid;
+  grid-template-columns: 91px 1fr;
+  align-items: center;
+  height: 55px;
+  border-bottom: 1px solid var(--fs-border);
+}
+
+.plan__row dt {
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.plan__row dd {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  font-size: 12px;
+}
+
+.plan__file {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan__input {
+  width: 64px;
+  height: 28px;
+  margin-left: -7px;
+  padding: 0 6px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: none;
+  font-size: 12px;
+}
+
+.plan__input:hover { border-color: var(--fs-border); }
+
+.plan__input:focus {
+  outline: none;
+  border-color: var(--fs-accent);
+  background: var(--fs-white);
+}
+
+.plan__note {
+  margin-top: 72px;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.plan__hint {
+  margin-top: 8px;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.plan__preview {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 18px 0;
+}
+
+.plan__preview-title {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.plan__area {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  margin: 40px 56px 58px 55px;
+  min-height: 0;
+}
+
+.plan__frame { position: relative; }
+
+.plan__dim {
+  position: absolute;
+  color: var(--fs-accent);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.plan__dim--w {
+  left: 50%;
+  top: -31px;
+  transform: translateX(-50%);
+}
+
+.plan__dim--h {
+  left: -47px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.plan__geometry {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--fs-border);
+  border-radius: 4px;
+  background-color: var(--fs-white);
+  background-image:
+    linear-gradient(to right, rgba(221, 229, 239, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 229, 239, 0.45) 1px, transparent 1px);
+  transition: transform 0.2s;
+}
+
+.plan__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.plan__shape {
+  position: absolute;
+  border: 1px solid var(--fs-border);
+  border-radius: 4px;
+  background: var(--fs-subtle);
+  cursor: grab;
+  touch-action: none;
+}
+
+.plan__shape--shelf,
+.plan__shape--walkway {
+  background: var(--fs-accent-light);
+  border-color: #d3e5f6;
+}
+
+.plan__shape--vehicleAisle { background: #f2f5f9; }
+
+.plan__shape.is-selected {
+  border-color: var(--fs-accent);
+  box-shadow: 0 0 0 2px rgba(7, 156, 245, 0.18);
+  z-index: 2;
+}
+
+.plan__shape-label {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--fs-text);
+  color: var(--fs-white);
+  font-size: 11px;
+  white-space: nowrap;
+}

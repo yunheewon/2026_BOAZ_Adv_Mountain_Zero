@@ -1,0 +1,455 @@
+/* Figma "06 / 기준안 시뮬레이션 · 위험 이벤트" */
+.sim {
+  display: grid;
+  grid-template-columns: 1fr 365px;
+  gap: 12px;
+  height: 650px;
+  margin: 0 24px;
+}
+
+.sim__stage {
+  position: relative;
+  min-width: 0;
+}
+
+.sim__scene {
+  width: 100%;
+  height: 100%;
+}
+
+.sim__view {
+  position: absolute;
+  left: 17px;
+  top: 18px;
+}
+
+.sim__view-btn {
+  width: 114px;
+  height: 32px;
+  padding: 0 13px;
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  background: var(--fs-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+}
+
+
+.sim__camera {
+  position: absolute;
+  right: 17px;
+  top: 18px;
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  background: var(--fs-white);
+}
+
+.sim__camera button {
+  width: 32px;
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid var(--fs-border);
+  background: none;
+  font-size: 15px;
+}
+
+.sim__camera button:last-child { border-bottom: 0; font-size: 13px; }
+.sim__camera button:hover { background: var(--fs-accent-light); }
+
+.sim__playback {
+  position: absolute;
+  left: 17px;
+  right: 18px;
+  bottom: 11px;
+}
+
+/* ---------- Playback bar ---------- */
+.playback {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  padding: 0 14px 0 7px;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 7px;
+}
+
+.playback__toggle {
+  width: 42px;
+  height: 33px;
+  padding: 0;
+  font-size: 13px;
+}
+
+.playback__time {
+  width: 124px;
+  margin-left: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.playback__track {
+  position: relative;
+  flex: 1;
+  height: 20px;
+}
+
+.playback__track input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.playback__track input::-webkit-slider-runnable-track {
+  height: 3px;
+  background: linear-gradient(to right, var(--fs-accent) var(--pct), var(--fs-border) var(--pct));
+}
+
+.playback__track input::-moz-range-track {
+  height: 3px;
+  background: linear-gradient(to right, var(--fs-accent) var(--pct), var(--fs-border) var(--pct));
+}
+
+.playback__track input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4.5px;
+  border: 2px solid var(--fs-accent);
+  border-radius: 50%;
+  background: var(--fs-white);
+}
+
+.playback__track input::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--fs-accent);
+  border-radius: 50%;
+  background: var(--fs-white);
+}
+
+.playback__tick {
+  position: absolute;
+  /* 트랙(높이 3px)의 가운데에 맞춤 */
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  box-shadow: 0 0 0 1.5px var(--fs-white);
+  border-radius: 50%;
+  background: var(--fs-risk);
+  pointer-events: none;
+}
+
+.playback__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 172px;
+  padding-left: 40px;
+}
+
+.playback__restart,
+.playback__speed {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  font-size: 13px;
+}
+
+.playback__restart:hover,
+.playback__speed:hover { background: var(--fs-subtle); }
+
+.playback__speed-wrap .fs-menu__panel {
+  top: auto;
+  bottom: calc(100% + 6px);
+}
+
+.playback--compact {
+  height: 35px;
+  padding: 0 42px 0 11px;
+  border-radius: 6px;
+}
+
+.playback__toggle-text {
+  width: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 10px;
+}
+
+.playback--compact .playback__time {
+  width: auto;
+  margin: 0 56px 0 8px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.playback--compact .playback__track input::-webkit-slider-runnable-track { height: 2px; }
+.playback--compact .playback__track input::-webkit-slider-thumb { margin-top: -5px; }
+
+/* ---------- Right panel ---------- */
+.sim__panel {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px;
+  overflow: auto;
+}
+
+.sim__filters {
+  display: flex;
+  gap: 4px;
+  margin: 18px 0 13px -5px;
+}
+
+.sim__filters button {
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.sim__filters button:hover { background: var(--fs-subtle); }
+.sim__filters button.is-active { color: var(--fs-accent); font-weight: 500; }
+
+.sim__events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--fs-border);
+}
+
+.sim__event {
+  display: grid;
+  grid-template-columns: 66px 62px 66px 1fr;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  padding: 0 1px;
+  border: 0;
+  border-bottom: 1px solid var(--fs-border);
+  background: none;
+  font-size: 11px;
+  text-align: left;
+}
+
+.sim__event:hover { background: #f7fbff; }
+
+.sim__event-id {
+  color: var(--fs-muted);
+  font-weight: 500;
+}
+
+.sim__event.is-selected .sim__event-id { color: var(--fs-accent); }
+.sim__event.is-selected { background: #f4faff; }
+
+.sim__none {
+  padding: 18px 0;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.sim__actions-title { margin-top: 37px; }
+
+.sim__actions {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sim__action {
+  display: grid;
+  grid-template-columns: 1fr 66px;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  row-gap: 15px;
+  align-items: center;
+  padding: 0 1px 25px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--fs-border);
+}
+
+.sim__action-title { font-size: 11px; }
+
+.sim__action-tag {
+  grid-row: 2;
+  color: var(--fs-muted);
+  font-size: 10px;
+}
+
+.sim__try {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 66px;
+  margin-top: 16px;
+}
+
+.sim__changes { margin: 14px 0 0; }
+
+.sim__changes div {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--fs-border);
+  font-size: 11px;
+}
+
+.sim__changes dt { color: var(--fs-muted); }
+.sim__changes dd { margin: 0; }
+
+.sim__foot {
+  margin: 31px 27px 28px;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+/* ---------- Trial floating window (Figma 07 / 07a) ---------- */
+.trial {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  width: 726px;
+  padding: 0 22px 22px 21px;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(33, 62, 110, 0.16);
+}
+
+.trial__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 37px;
+  margin: 0 -22px 0 -21px;
+  padding: 12px 22px 0 21px;
+  cursor: move;
+  touch-action: none;
+}
+
+.trial__title { font-size: 14px; font-weight: 500; }
+
+.trial__close {
+  margin-right: 17px;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.trial__close:hover { background: var(--fs-subtle); }
+
+.trial__sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--fs-muted);
+  font-size: 12px;
+}
+
+.trial__sep {
+  width: 684px;
+  height: 1px;
+  margin: 10px 0 18px -1px;
+  border: 0;
+  background: var(--fs-border);
+}
+
+.trial__sep--lower { margin: 16px 0 20px; width: 682px; }
+
+.trial__scene {
+  position: relative;
+  width: 682px;
+  height: 282px;
+  flex: none;
+}
+
+.trial__scene .fs-scene { width: 100%; height: 100%; }
+
+.trial__playback {
+  position: absolute;
+  left: 11px;
+  right: 12px;
+  bottom: 3px;
+}
+
+.trial__param {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.trial__desc {
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.trial__edit { width: 114px; height: 31px; }
+
+.trial__slider {
+  display: grid;
+  grid-template-columns: 150px 1fr 70px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.trial__slider span { color: var(--fs-muted); }
+.trial__slider input { accent-color: var(--fs-accent); }
+.trial__slider b { font-weight: 500; text-align: right; }
+
+.trial__metrics {
+  display: grid;
+  grid-template-columns: 185px 216px 1fr;
+  margin: 0;
+}
+
+.trial__metrics dt {
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.trial__metrics dd {
+  margin: 7px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.trial__hint {
+  min-height: 44px;
+  color: var(--fs-muted);
+  font-size: 12px;
+}
+
+.trial__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.trial__run { width: 194px; }

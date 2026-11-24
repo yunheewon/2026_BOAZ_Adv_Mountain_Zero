@@ -1,0 +1,577 @@
+/* Figma "04b / 배치 · 컴팩트 좌측 요소 목록" 기준 */
+.lpage {
+  min-height: 100vh;
+  background: var(--fs-background);
+}
+
+.lpage__body {
+  display: grid;
+  grid-template-columns: 218px 1fr;
+  align-items: start;
+}
+
+/* ---------- Palette ---------- */
+.palette {
+  position: sticky;
+  top: 76px;
+  width: 206px;
+  max-height: calc(100vh - 92px);
+  margin: 12px 0 0 12px;
+  padding: 13px 10px 16px 8px;
+  overflow-y: auto;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 14px;
+}
+
+.palette__title {
+  margin: 0 0 13px 3px;
+  color: #17233e;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.palette__sep {
+  height: 1px;
+  margin: 0 0 8px;
+  border: 0;
+  background: #e9eff9;
+}
+
+.palette__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 188px;
+  height: 30px;
+  padding: 0 8px 0 7px;
+  border: 0;
+  border-radius: 7px;
+  background: #eef3fc;
+  color: #17233e;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.palette__chevron { transition: transform 0.15s; }
+.palette__chevron.is-closed { transform: rotate(180deg); }
+
+.palette__items {
+  display: grid;
+  grid-template-columns: repeat(4, 46.5px);
+  row-gap: 10px;
+  margin: 0;
+  padding: 17px 0 24px 2px;
+  list-style: none;
+}
+
+.palette__item {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  width: 46.5px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  cursor: grab;
+}
+
+.palette__item:hover .palette__icon { background: var(--fs-accent-light); }
+.palette__item:active { cursor: grabbing; }
+
+.palette__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin: -3px 0;
+  border-radius: 6px;
+  transition: background-color 0.12s;
+}
+
+.palette__icon img { max-width: none; }
+
+.palette__limit {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #253957;
+  font-size: 7.5px;
+  font-weight: 700;
+}
+
+.palette__label {
+  color: #1f2c44;
+  font-size: 9.3px;
+  white-space: nowrap;
+}
+
+/* ---------- Main column ---------- */
+.lpage__main { min-width: 0; }
+
+.lpage__work {
+  display: flex;
+  flex-direction: column;
+  height: max(776px, calc(100vh - 124px));
+  padding: 12px 27px 16px 14px;
+}
+
+.ltoolbar {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.ltoolbar__load { width: 126px; margin-left: 3px; }
+.ltoolbar__undo { width: 106px; }
+
+.ltoolbar__grid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 6px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--fs-muted);
+  font-size: 12px;
+}
+
+.ltoolbar__grid:hover { color: var(--fs-text); }
+
+/* 격자 표시 토글 스위치 */
+.ltoolbar__switch {
+  position: relative;
+  width: 30px;
+  height: 17px;
+  border-radius: 9px;
+  background: #c9d4e2;
+  transition: background-color 0.15s;
+}
+
+.ltoolbar__switch::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--fs-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s;
+}
+
+.ltoolbar__grid[aria-checked='true'] .ltoolbar__switch { background: var(--fs-accent); }
+.ltoolbar__grid[aria-checked='true'] .ltoolbar__switch::after { transform: translateX(13px); }
+
+.ltoolbar__zoom-wrap { margin-left: 56px; }
+.ltoolbar__zoom { width: 103px; }
+.ltoolbar__run { width: 188px; margin-left: 28px; }
+
+.lpage__dims {
+  margin: 18px 0 16px 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lpage__viewport-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.lpage__viewport {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+  overflow: auto;
+  /* 작업장 바깥 영역은 살짝 어둡게, 작업장 경계는 선으로 */
+  background: #fbfcfe;
+  border: 1px solid var(--fs-border);
+  border-radius: 2px;
+}
+
+.lpage__status {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  margin-top: 16px;
+  padding: 0 13px;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 4px;
+  color: var(--fs-muted);
+  font-size: 11px;
+  white-space: pre;
+}
+
+/* ---------- Canvas ---------- */
+.lcanvas {
+  position: relative;
+  flex: none;
+  margin: auto;
+  background-color: var(--fs-white);
+  box-shadow: 0 0 0 1px var(--fs-border);
+  touch-action: none;
+  user-select: none;
+}
+
+.lcanvas.has-grid {
+  background-image:
+    linear-gradient(to right, var(--fs-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--fs-subtle) 1px, transparent 1px);
+}
+
+.lcanvas__empty {
+  position: absolute;
+  left: 50%;
+  top: 11%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.lcanvas__empty-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lcanvas__empty-sub {
+  margin-top: 13px;
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+/* ---------- Elements ---------- */
+.lel {
+  position: absolute;
+  transform-origin: 50% 50%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.lel:active { cursor: grabbing; }
+
+.lel__fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.lel--vehicleAisle { background: var(--fs-subtle); }
+.lel--walkway { background: var(--fs-accent-light); }
+
+.lel--crossing {
+  background: repeating-linear-gradient(90deg, #ffffff 0 5px, #dfe6ef 5px 10px);
+  outline: 1px solid #d3dce7;
+}
+
+.lel--machine,
+.lel--workbench,
+.lel--conveyor,
+.lel--dock,
+.lel--charger,
+.lel--agv,
+.lel--truck {
+  background: var(--fs-subtle);
+  border: 1px solid var(--fs-border);
+  border-radius: 4px;
+}
+
+.lel--truck { background: #e8edf3; }
+.lel--conveyor { background: repeating-linear-gradient(90deg, #eef2f7 0 8px, #dfe6ef 8px 10px); }
+
+.lel--pallet {
+  background: #f6efe4;
+  border: 1px solid #e3d3b8;
+  border-radius: 3px;
+}
+
+.lel--waiting {
+  border: 1.5px dashed #9fb3c8;
+  border-radius: 4px;
+  background: rgba(242, 245, 249, 0.5);
+}
+
+.lel--door {
+  background: var(--fs-white);
+  border: 2px solid var(--fs-accent);
+  border-radius: 2px;
+}
+
+.lel--wall { background: #5b6b80; border-radius: 1px; }
+.lel--column { background: #8a98aa; border-radius: 2px; }
+.lel--safetyBar { background: repeating-linear-gradient(90deg, #f5c518 0 8px, #2b3440 8px 12px); border-radius: 2px; }
+.lel--speedBump { background: repeating-linear-gradient(45deg, #f5c518 0 5px, #2b3440 5px 10px); border-radius: 3px; }
+
+.lel--speedLimit {
+  display: grid;
+  place-items: center;
+  border: 2px solid #d9352b;
+  border-radius: 50%;
+  background: var(--fs-white);
+}
+
+.lel__limit {
+  color: #253957;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lel--worker {
+  display: grid;
+  place-items: center;
+  border: 1.5px solid #2b8a3e;
+  border-radius: 50%;
+  background: #e8f5e9;
+}
+
+.lel__small-icon {
+  position: absolute;
+  inset: 12%;
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.lel__worker-icon {
+  width: 60%;
+  height: 70%;
+  pointer-events: none;
+}
+
+.lel__name {
+  position: absolute;
+  inset: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+  color: var(--fs-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lel__name img {
+  flex: none;
+  opacity: 0.7;
+}
+
+.lel__name-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 대기·충전 구역 이름은 왼쪽 위 모서리에 (안의 팔레트·충전기와 겹치지 않게) */
+.lel__zone-label {
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  max-width: calc(100% - 12px);
+  overflow: hidden;
+  color: #6f8299;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lel__tag {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lel__tag--forklift { color: var(--fs-text); }
+.lel__tag--walkway { color: var(--fs-accent); top: 85%; }
+.lel__tag--walkway.is-horizontal { top: 50%; left: 80%; }
+
+/* 선택 표시 + 손잡이 */
+.lel.is-selected { outline: 1.5px solid var(--fs-accent); outline-offset: 2px; }
+
+.lel__handle {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  background: var(--fs-white);
+  border: 1.5px solid var(--fs-accent);
+  border-radius: 2px;
+}
+
+.lel__handle--nw { left: -2px; top: -2px; cursor: nwse-resize; }
+.lel__handle--n { left: 50%; top: -2px; cursor: ns-resize; }
+.lel__handle--ne { left: calc(100% + 2px); top: -2px; cursor: nesw-resize; }
+.lel__handle--e { left: calc(100% + 2px); top: 50%; cursor: ew-resize; }
+.lel__handle--se { left: calc(100% + 2px); top: calc(100% + 2px); cursor: nwse-resize; }
+.lel__handle--s { left: 50%; top: calc(100% + 2px); cursor: ns-resize; }
+.lel__handle--sw { left: -2px; top: calc(100% + 2px); cursor: nesw-resize; }
+.lel__handle--w { left: -2px; top: 50%; cursor: ew-resize; }
+
+.lel__rotate-stem {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  width: 1.5px;
+  height: 18px;
+  margin-left: -0.75px;
+  background: var(--fs-accent);
+  pointer-events: none;
+}
+
+.lel__rotate {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border: 1.5px solid var(--fs-accent);
+  border-radius: 50%;
+  background: var(--fs-white);
+  cursor: grab;
+}
+
+/* ---------- Properties popover ---------- */
+.props {
+  position: absolute;
+  z-index: 40;
+  width: 306px;
+  padding: 13px 17px 16px;
+  background: var(--fs-white);
+  border: 1px solid var(--fs-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(33, 62, 110, 0.12);
+  cursor: default;
+}
+
+/* Figma: 캔버스 안쪽 위 33px, 오른쪽 35px */
+.props--right { top: 33px; right: 35px; }
+.props--left { top: 33px; left: 35px; }
+
+.props__title {
+  width: 100%;
+  margin-left: -5px;
+  padding: 2px 4px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.props__title:hover { border-color: var(--fs-border); }
+.props__title:focus { outline: none; border-color: var(--fs-accent); }
+
+.props__kind {
+  margin-bottom: 6px;
+  color: var(--fs-muted);
+  font-size: 10px;
+}
+
+.props__row {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  align-items: center;
+  height: 35px;
+}
+
+.props__row label {
+  color: var(--fs-muted);
+  font-size: 11px;
+}
+
+.props__value {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.props__input {
+  width: 58px;
+  height: 26px;
+  margin-left: -6px;
+  padding: 0 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: none;
+  font-size: 12px;
+}
+
+.props__value .props__input + .props__input { margin-left: 0; }
+.props__input:hover { border-color: var(--fs-border); }
+.props__input:focus { outline: none; border-color: var(--fs-accent); background: var(--fs-white); }
+.props__select { width: 96px; }
+.props__times { margin: 0 2px; color: var(--fs-muted); }
+.props__unit { color: var(--fs-text); }
+
+.props__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.props__delete { color: #c4472b; }
+.props__done { width: 97px; height: 32px; }
+
+/* ---------- Simulation settings dialog ---------- */
+.simset {
+  width: 340px;
+  padding: 20px 22px 20px;
+}
+
+.simset__field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 20px;
+  font-size: 12px;
+}
+
+.simset__field span:first-child {
+  width: 36px;
+  color: var(--fs-muted);
+}
+
+.simset__field input {
+  width: 88px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--fs-border);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.simset__field input:focus {
+  outline: none;
+  border-color: var(--fs-accent);
+  box-shadow: 0 0 0 3px rgba(7, 156, 245, 0.12);
+}
+
+.simset__field input[aria-invalid='true'] { border-color: #d9352b; }
+
+.simset__error {
+  margin: -8px 0 16px;
+  color: #c4472b;
+  font-size: 12px;
+}
+
+.simset__run { min-width: 76px; }

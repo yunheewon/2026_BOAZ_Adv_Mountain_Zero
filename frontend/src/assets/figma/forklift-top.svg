@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="50" height="32" viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Asset / Forklift top view">
+<path id="Vector" d="M4 7L10 3H36L41 8V28H5L4 7Z" fill="#F0A12C" stroke-width="2" stroke="#B76D18"/>
+<path id="Vector_2" d="M10 7H31L35 12H10V7Z" fill="#F6CD79"/>
+<path id="Vector_3" d="M31 12H18C16.8954 12 16 12.8954 16 14V21C16 22.1046 16.8954 23 18 23H31C32.1046 23 33 22.1046 33 21V14C33 12.8954 32.1046 12 31 12Z" fill="#394B5E"/>
+<g id="Vector_4">
+<path d="M41 10V27ZM41 12H49ZM41 24H49Z" fill="black"/>
+<path d="M41 10V27M41 12H49M41 24H49" stroke-width="3" stroke="#263744"/>
+</g>
+<path id="Vector_5" d="M11 30C12.6569 30 14 28.6569 14 27C14 25.3431 12.6569 24 11 24C9.34315 24 8 25.3431 8 27C8 28.6569 9.34315 30 11 30Z" fill="#273746"/>
+<path id="Vector_6" d="M34 30C35.6569 30 37 28.6569 37 27C37 25.3431 35.6569 24 34 24C32.3431 24 31 25.3431 31 27C31 28.6569 32.3431 30 34 30Z" fill="#273746"/>
+</g>
+</svg>

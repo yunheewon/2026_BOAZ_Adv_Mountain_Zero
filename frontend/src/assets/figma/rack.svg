@@ -1,0 +1,65 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="196" height="56" viewBox="0 0 196 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Asset / Isometric rack">
+<path id="Vector" d="M3 15L10 6H188L194 15V53H3V15Z" fill="#D7E8F8" stroke-width="2" stroke="#2769B9"/>
+<g id="Vector_2">
+<path d="M3 15H194ZM3 52H194Z" fill="black"/>
+<path d="M3 15H194M3 52H194" stroke-width="4" stroke="#1675D1"/>
+</g>
+<g id="Group">
+<path id="Vector_3" d="M8 18L13 13H35L30 18H8Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_4" d="M30 18H8V45H30V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_5">
+<path d="M19 18V45Z" fill="black"/>
+<path d="M19 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Group_2">
+<path id="Vector_6" d="M39 18L44 13H66L61 18H39Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_7" d="M61 18H39V45H61V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_8">
+<path d="M50 18V45Z" fill="black"/>
+<path d="M50 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Group_3">
+<path id="Vector_9" d="M70 18L75 13H97L92 18H70Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_10" d="M92 18H70V45H92V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_11">
+<path d="M81 18V45Z" fill="black"/>
+<path d="M81 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Group_4">
+<path id="Vector_12" d="M101 18L106 13H128L123 18H101Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_13" d="M123 18H101V45H123V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_14">
+<path d="M112 18V45Z" fill="black"/>
+<path d="M112 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Group_5">
+<path id="Vector_15" d="M132 18L137 13H159L154 18H132Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_16" d="M154 18H132V45H154V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_17">
+<path d="M143 18V45Z" fill="black"/>
+<path d="M143 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Group_6">
+<path id="Vector_18" d="M163 18L168 13H190L185 18H163Z" fill="#F2D6A8" stroke="#A68453"/>
+<path id="Vector_19" d="M185 18H163V45H185V18Z" fill="#DAB57D" stroke="#A68453"/>
+<g id="Vector_20">
+<path d="M174 18V45Z" fill="black"/>
+<path d="M174 18V45" stroke="#B99765"/>
+</g>
+</g>
+<g id="Vector_21">
+<path d="M4 13V55ZM35 13V55ZM66 13V55ZM97 13V55ZM128 13V55ZM159 13V55ZM193 13V55Z" fill="black"/>
+<path d="M4 13V55M35 13V55M66 13V55M97 13V55M128 13V55M159 13V55M193 13V55" stroke-width="4" stroke="#1166BE"/>
+</g>
+<g id="Vector_22">
+<path d="M1 51H195Z" fill="black"/>
+<path d="M1 51H195" stroke-width="4" stroke="#0E57AB"/>
+</g>
+</g>
+</svg>
