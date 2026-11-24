@@ -1,0 +1,8 @@
+# 학습·실험 산출물은 깃허브에 올리지 않음 (용량 큼)
+data/
+weights/
+runs/
+out/
+*.pt
+*.onnx
+__pycache__/

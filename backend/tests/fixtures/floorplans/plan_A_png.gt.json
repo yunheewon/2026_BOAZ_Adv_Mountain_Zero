@@ -1,0 +1,182 @@
+{
+ "schema_version": "0.1",
+ "meta": {
+  "name": "plan_A",
+  "source_file": "plan_A.png",
+  "created_by": "ground_truth",
+  "bbox_m": [
+   40.0,
+   25.0
+  ],
+  "scale": {
+   "px_per_m": 40,
+   "method": "ground_truth"
+  },
+  "wall_thickness_m": 0.3
+ },
+ "boundary": {
+  "polygon": [
+   [
+    0,
+    0
+   ],
+   [
+    40.0,
+    0
+   ],
+   [
+    40.0,
+    25.0
+   ],
+   [
+    0,
+    25.0
+   ]
+  ]
+ },
+ "walls": [],
+ "objects": [
+  {
+   "id": "rack_01",
+   "type": "rack",
+   "cx": 11.0,
+   "cy": 0.8999999999999999,
+   "w": 14.0,
+   "h": 1.2,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_02",
+   "type": "rack",
+   "cx": 11.0,
+   "cy": 5.7,
+   "w": 14.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_03",
+   "type": "rack",
+   "cx": 11.0,
+   "cy": 11.1,
+   "w": 14.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_04",
+   "type": "rack",
+   "cx": 29.0,
+   "cy": 0.8999999999999999,
+   "w": 14.0,
+   "h": 1.2,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_05",
+   "type": "rack",
+   "cx": 29.0,
+   "cy": 5.7,
+   "w": 14.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_06",
+   "type": "rack",
+   "cx": 29.0,
+   "cy": 11.1,
+   "w": 14.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_01",
+   "type": "pillar",
+   "cx": 10.0,
+   "cy": 17.0,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_02",
+   "type": "pillar",
+   "cx": 10.0,
+   "cy": 21.5,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_03",
+   "type": "pillar",
+   "cx": 20.0,
+   "cy": 17.0,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_04",
+   "type": "pillar",
+   "cx": 20.0,
+   "cy": 21.5,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_05",
+   "type": "pillar",
+   "cx": 30.0,
+   "cy": 17.0,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_06",
+   "type": "pillar",
+   "cx": 30.0,
+   "cy": 21.5,
+   "w": 0.5,
+   "h": 0.5,
+   "rotation_deg": 0
+  }
+ ],
+ "doors": [
+  {
+   "id": "door_01",
+   "type": "door",
+   "cx": 0.15,
+   "cy": 19.6,
+   "width": 1.2,
+   "orientation": "vertical"
+  },
+  {
+   "id": "door_02",
+   "type": "door",
+   "cx": 6.5,
+   "cy": 24.85,
+   "width": 1.0,
+   "orientation": "horizontal"
+  },
+  {
+   "id": "door_03",
+   "type": "dock",
+   "cx": 27.0,
+   "cy": 24.85,
+   "width": 4.0,
+   "orientation": "horizontal"
+  },
+  {
+   "id": "door_04",
+   "type": "dock",
+   "cx": 33.0,
+   "cy": 24.85,
+   "width": 4.0,
+   "orientation": "horizontal"
+  }
+ ]
+}
