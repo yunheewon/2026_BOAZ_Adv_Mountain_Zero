@@ -1,0 +1,156 @@
+{
+ "schema_version": "0.1",
+ "meta": {
+  "name": "plan_C",
+  "source_file": "plan_C_color.png",
+  "created_by": "ground_truth",
+  "bbox_m": [
+   36.0,
+   22.0
+  ],
+  "scale": {
+   "px_per_m": 32,
+   "method": "ground_truth"
+  },
+  "wall_thickness_m": 0.35
+ },
+ "boundary": {
+  "polygon": [
+   [
+    0,
+    0
+   ],
+   [
+    36.0,
+    0
+   ],
+   [
+    36.0,
+    22.0
+   ],
+   [
+    0,
+    22.0
+   ]
+  ]
+ },
+ "walls": [],
+ "objects": [
+  {
+   "id": "rack_01",
+   "type": "rack",
+   "cx": 4.0,
+   "cy": 9.0,
+   "w": 1.2,
+   "h": 10.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_02",
+   "type": "rack",
+   "cx": 8.5,
+   "cy": 9.0,
+   "w": 2.2,
+   "h": 10.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_03",
+   "type": "rack",
+   "cx": 13.0,
+   "cy": 9.0,
+   "w": 2.2,
+   "h": 10.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_04",
+   "type": "rack",
+   "cx": 17.5,
+   "cy": 9.0,
+   "w": 2.2,
+   "h": 10.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_05",
+   "type": "rack",
+   "cx": 22.0,
+   "cy": 9.0,
+   "w": 2.2,
+   "h": 10.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_06",
+   "type": "rack",
+   "cx": 30.0,
+   "cy": 0.85,
+   "w": 8.0,
+   "h": 1.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_07",
+   "type": "rack",
+   "cx": 30.0,
+   "cy": 9.0,
+   "w": 6.0,
+   "h": 2.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_01",
+   "type": "pillar",
+   "cx": 6.0,
+   "cy": 18.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_02",
+   "type": "pillar",
+   "cx": 16.0,
+   "cy": 18.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_03",
+   "type": "pillar",
+   "cx": 28.0,
+   "cy": 16.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  }
+ ],
+ "doors": [
+  {
+   "id": "door_01",
+   "type": "dock",
+   "cx": 9.0,
+   "cy": 0.175,
+   "width": 3.0,
+   "orientation": "horizontal"
+  },
+  {
+   "id": "door_02",
+   "type": "door",
+   "cx": 35.825,
+   "cy": 17.0,
+   "width": 1.0,
+   "orientation": "vertical"
+  },
+  {
+   "id": "door_03",
+   "type": "dock",
+   "cx": 24.0,
+   "cy": 21.825,
+   "width": 3.5,
+   "orientation": "horizontal"
+  }
+ ]
+}

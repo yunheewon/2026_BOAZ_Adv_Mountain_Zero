@@ -1,0 +1,271 @@
+{
+ "schema_version": "0.1",
+ "meta": {
+  "name": "plan_B",
+  "source_file": "plan_B.png",
+  "created_by": "ground_truth",
+  "bbox_m": [
+   50,
+   35
+  ],
+  "scale": {
+   "px_per_m": 40,
+   "method": "ground_truth"
+  },
+  "wall_thickness_m": 0.25
+ },
+ "boundary": {
+  "polygon": [
+   [
+    0,
+    0
+   ],
+   [
+    50,
+    0
+   ],
+   [
+    50,
+    20
+   ],
+   [
+    30,
+    20
+   ],
+   [
+    30,
+    35
+   ],
+   [
+    0,
+    35
+   ]
+  ]
+ },
+ "walls": [
+  {
+   "id": "iwall_01",
+   "kind": "interior",
+   "polygon": [
+    [
+     0.25,
+     28.0
+    ],
+    [
+     8.0,
+     28.0
+    ],
+    [
+     8.0,
+     28.15
+    ],
+    [
+     0.25,
+     28.15
+    ]
+   ]
+  },
+  {
+   "id": "iwall_02",
+   "kind": "interior",
+   "polygon": [
+    [
+     8.0,
+     28.0
+    ],
+    [
+     8.15,
+     28.0
+    ],
+    [
+     8.15,
+     34.75
+    ],
+    [
+     8.0,
+     34.75
+    ]
+   ]
+  }
+ ],
+ "objects": [
+  {
+   "id": "rack_01",
+   "type": "rack",
+   "cx": 9.0,
+   "cy": 4.5,
+   "w": 12.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_02",
+   "type": "rack",
+   "cx": 22.5,
+   "cy": 4.5,
+   "w": 9.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_03",
+   "type": "rack",
+   "cx": 9.0,
+   "cy": 9.9,
+   "w": 12.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_04",
+   "type": "rack",
+   "cx": 22.5,
+   "cy": 9.9,
+   "w": 9.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_05",
+   "type": "rack",
+   "cx": 9.0,
+   "cy": 15.3,
+   "w": 12.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_06",
+   "type": "rack",
+   "cx": 22.5,
+   "cy": 15.3,
+   "w": 9.0,
+   "h": 2.4,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_07",
+   "type": "rack",
+   "cx": 49.15,
+   "cy": 10.0,
+   "w": 1.2,
+   "h": 12.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_08",
+   "type": "rack",
+   "cx": 37.0,
+   "cy": 10.0,
+   "w": 2.4,
+   "h": 12.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_09",
+   "type": "rack",
+   "cx": 42.0,
+   "cy": 10.0,
+   "w": 2.4,
+   "h": 12.0,
+   "rotation_deg": 0
+  },
+  {
+   "id": "rack_10",
+   "type": "rack",
+   "cx": 20.0,
+   "cy": 26.0,
+   "w": 12.0,
+   "h": 1.2,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_01",
+   "type": "pillar",
+   "cx": 10.0,
+   "cy": 22.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_02",
+   "type": "pillar",
+   "cx": 20.0,
+   "cy": 21.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_03",
+   "type": "pillar",
+   "cx": 33.0,
+   "cy": 3.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_04",
+   "type": "pillar",
+   "cx": 45.0,
+   "cy": 3.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_05",
+   "type": "pillar",
+   "cx": 15.0,
+   "cy": 31.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  },
+  {
+   "id": "pillar_06",
+   "type": "pillar",
+   "cx": 25.0,
+   "cy": 31.0,
+   "w": 0.6,
+   "h": 0.6,
+   "rotation_deg": 0
+  }
+ ],
+ "doors": [
+  {
+   "id": "door_01",
+   "type": "dock",
+   "cx": 40.0,
+   "cy": 19.875,
+   "width": 3.5,
+   "orientation": "horizontal"
+  },
+  {
+   "id": "door_02",
+   "type": "dock",
+   "cx": 29.875,
+   "cy": 26.0,
+   "width": 3.5,
+   "orientation": "vertical"
+  },
+  {
+   "id": "door_03",
+   "type": "door",
+   "cx": 22.0,
+   "cy": 34.875,
+   "width": 1.2,
+   "orientation": "horizontal"
+  },
+  {
+   "id": "door_04",
+   "type": "door",
+   "cx": 0.125,
+   "cy": 12.0,
+   "width": 1.0,
+   "orientation": "vertical"
+  }
+ ]
+}
